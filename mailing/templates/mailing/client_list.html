@@ -1,0 +1,18 @@
+{% extends 'mailing/layout.html' %}
+
+{% block body %}
+
+{% for object in object_list %}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{ object.first_name }}</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">{{object.last_name}}</h6>
+        <h6 class="card-subtitle mb-2 text-body-secondary">{{object.middle_name}}</h6>
+        <p class="card-text">{{object.message}}</p>
+
+        <a href="{% url 'mailing:list' %}" class="card-link"></a>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
